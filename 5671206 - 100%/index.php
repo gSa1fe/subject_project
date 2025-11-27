@@ -1,0 +1,305 @@
+<?php
+session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineering</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Home/CSS/style.css">
+    <link rel="stylesheet" href="Home/CSS/index.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="site-header">
+        <div class="header-content">
+            <div class="header-text">
+                <h1>Software Engineering</h1>
+                <p>Lampang Rajabhat University</p>
+            </div>
+            <div class="header-logo">
+                SE <span>LPRU</span>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li class="dropdown">
+                    <a href="index.php" class="dropbtn">
+                        <i class="fas fa-home"></i> หน้าหลัก <i class="fa-solid fa-angle-right"
+                            style="font-size: 12px; margin-left: 5px;"></i>
+                    </a>
+                    <div class="dropdown-content">
+                        <a class="drop" href="index.php">หน้าหลัก</a>
+                        <a class="drop" href="Home/HTML/components_pages/prize.html">ผลงานเผยแพร่</a>
+                        <a class="drop" href="Home/HTML/components_pages/index.html">ข้อมูลหลักสูตร</a>
+                        <a class="drop" href="https://classroom.google.com/c/MzE3MTI3NzY3MTk3?cjc=z454fhk"
+                            target="_blank">งานประกันคุณภาพ</a>
+                        <a class="drop" href="https://www.softengthai.com/Document/SE_Project.pdf"
+                            target="_blank">เอกสารโครงงาน</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="Home/HTML/main_pages/grade-1.php" class="dropbtn">
+                        <i class="fas fa-graduation-cap"></i> ผลการเรียน <i class="fa-solid fa-angle-right"
+                            style="font-size: 12px; margin-left: 5px;"></i>
+                    </a>
+                    <div class="dropdown-content">
+                        <a class="drop" href="Home/HTML/main_pages/grade-1.php">ภาคเรียนที่ 1</a>
+                        <a class="drop" href="Home/HTML/main_pages/grade-2.php">ภาคเรียนที่ 2</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="Home/PHP/student.php">
+                        <i class="fas fa-id-card"></i> ทะเบียนนักศึกษา
+                    </a>
+                </li>
+                <li>
+                    <a href="Home/PHP/studentManage.php">
+                        <i class="fas fa-user"></i> ข้อมูลนักศึกษา
+                    </a>
+                </li>
+                <li>
+                    <a href="Home/HTML/main_pages/alumni.php">
+                        <i class="fas fa-user-graduate"></i> ทำเนียบนักศึกษา
+                    </a>
+                </li>
+                <li>
+                    <a href="Home/HTML/main_pages/resume.php">
+                        <i class="fas fa-file-alt"></i> Resume
+                    </a>
+                </li>
+            </ul>
+            <?php if (isset($_SESSION['id_std'])) { ?>
+                <button class="login-btn" style="background: linear-gradient(180deg, #ff6b6b 0%, #ee5253 100%);">
+                    <a href="Home/PHP/logout.php" onclick="return confirm('ต้องการออกจากระบบใช่หรือไม่?');">ออกจากระบบ</a>
+                </button>
+            <?php } else { ?>
+                <button class="login-btn">
+                    <a href="Home/PHP/login.php">เข้าสู่ระบบ</a>
+                </button>
+            <?php } ?>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+
+    <section class="banner-section">
+        <button class="slider-arrow left" id="prevBtn">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+
+        <div class="slider-container">
+            <div class="slider-wrapper">
+                <img src="https://i.pinimg.com/originals/39/13/6f/39136fd174a7fe806c4827d496f58b88.gif" alt="Slide1"
+                    oncontextmenu="return false;" ondragstart="return false;">
+                <img src="https://i.pinimg.com/originals/87/f6/66/87f666a4514cd1f117b5ebd53e773959.gif" alt="Slide2"
+                    oncontextmenu="return false;" ondragstart="return false;">
+                <img src="https://media.tenor.com/K6sCRYWhRgAAAAAC/banner.gif" alt="Slide3"
+                    oncontextmenu="return false;" ondragstart="return false;">
+            </div>
+        </div>
+
+        <button class="slider-arrow right" id="nextBtn">
+            <i class="fas fa-arrow-right"></i>
+        </button>
+    </section>
+
+    <!-- Info Section -->
+    <section class="info-section">
+        <div class="info-container">
+
+            <div class="info-card">
+                <img src="https://i.pinimg.com/1200x/f3/4e/93/f34e93407db7f6ae0b250ab5230d5300.jpg" alt="1"
+                    oncontextmenu="return false;" ondragstart="return false;" class="card-img">
+                <div class="card-content">
+                    <h3>ผลงานเผยแพร่</h3>
+                    <ul>
+                        <li>- การผลิตแอนิเมชัน</li>
+                        <li>- การพัฒนาเว็บแอปพลิเคชัน</li>
+                        <li>- การพัฒนาโมบายแอปพลิเคชัน</li>
+                    </ul>
+                </div>
+                <a href="Home/HTML/components_pages/prize.html" class="card-btn">
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="info-card">
+                <img src="https://i.pinimg.com/736x/cc/35/9f/cc359f87e15dcf3d1857e334df2fcb27.jpg" alt="2"
+                    oncontextmenu="return false;" ondragstart="return false;" class="card-img">
+                <div class="card-content">
+                    <h3>ข้อมูลหลักสูตร</h3>
+                    <ul>
+                        <li>- ความรู้ด้านเครือข่ายฯ</li>
+                        <li>- ความรู้ด้านฐานข้อมูล</li>
+                        <li>- ความรู้ด้านการพัฒนา SW</li>
+                    </ul>
+                </div>
+                <a href="Home/HTML/components_pages/index.html" class="card-btn">
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="info-card">
+                <img src="https://i.pinimg.com/1200x/f4/4c/e6/f44ce6b9cdf8ef14c110063ebaf61389.jpg" alt="3"
+                    oncontextmenu="return false;" ondragstart="return false;" class="card-img">
+                <div class="card-content">
+                    <h3>งานประกันคุณภาพ</h3>
+                    <ul>
+                        <li>- เอกสารการประชุม</li>
+                        <li>- มคอ.3-4-5-6</li>
+                        <li>- เอกสารงานประกันคุณภาพ</li>
+                    </ul>
+                </div>
+                <a href="https://classroom.google.com/c/MzE3MTI3NzY3MTk3?cjc=z454fhk" target="_blank" class="card-btn">
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <div class="info-card">
+                <img src="https://i.pinimg.com/736x/9f/01/9a/9f019a83772a7c83abcb0af5c590951f.jpg" alt="4"
+                    oncontextmenu="return false;" ondragstart="return false;" class="card-img">
+                <div class="card-content">
+                    <h3>เอกสารโครงงาน</h3>
+                    <ul>
+                        <li>- คู่มือโครงงาน</li>
+                        <li>- รายงานความก้าวหน้า</li>
+                        <li>- แบบคำร้องต่างๆ</li>
+                    </ul>
+                </div>
+                <a href="https://www.softengthai.com/Document/SE_Project.pdf" target="_blank" class="card-btn">
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Quick Links Bar -->
+
+    <div class="quick-links-bar">
+        <div class="links-container">
+            <a href="https://coopcenter.lpru.ac.th/web/" target="_blank">
+                <i class="fas fa-handshake"></i> Cooperative
+            </a>
+            <a href="https://www.youtube.com/channel/UCGobB11SOmjWIuNMmDYixUQ" target="_blank">
+                <i class="fab fa-youtube"></i> YouTube
+            </a>
+            <a href="Home/HTML/main_pages/alumni.html" target="_blank">
+                <i class="fas fa-user-graduate"></i> Alumni
+            </a>
+            <a href="Home/HTML/components_pages/learning.html">
+                <i class="fa-solid fa-book"></i> Learning
+            </a>
+            <a href="https://www.softengthai.com/research.php" target="_blank">
+                <i class="fas fa-flask"></i> Research
+            </a>
+            <a href="https://dsa.lpru.ac.th/" target="_blank">
+                <i class="fas fa-calendar-days"></i> Activities
+            </a>
+        </div>
+    </div>
+
+    <!-- Curriculum Section -->
+
+    <section class="curriculum-section">
+        <div class="curriculum-container">
+
+            <div class="curriculum-row">
+                <div class="curriculum-text">
+                    <p class="intro-text">
+                        หลักสูตรวิศวกรรมซอฟต์แวร์ผลิตบัณฑิตที่มีความรู้และทักษะการ พัฒนาซอฟต์แวร์อย่างเป็นระบบ
+                        มีความเป็นมืออาชีพในการ พัฒนาซอฟต์แวร์เป็นทีม มีความสามารถประยุกต์ใช้ศาสตร์และ
+                        เทคโนโลยีคอมพิวเตอร์อย่างมีประสิทธิภาพ เห็นคุณค่าของ ทรัพย์สินทางปัญญา
+                        และมีคุณธรรมจริยธรรมในวิชาชีพ
+                    </p>
+                </div>
+                <div class="curriculum-img-box">
+                    <img src="https://i.pinimg.com/736x/27/7f/dd/277fdd8f7010afd8a1e874b82cc5ab33.jpg"
+                        alt="Software Engineering" oncontextmenu="return false;" ondragstart="return false;">
+                </div>
+            </div>
+
+            <div class="curriculum-row">
+                <div class="curriculum-img-box">
+                    <img src="https://i.pinimg.com/736x/2f/d4/64/2fd464dd99141a0ceea9dbf1ac28a7c2.jpg"
+                        alt="Curriculum Info" oncontextmenu="return false;" ondragstart="return false;">
+                </div>
+                <div class="curriculum-text">
+                    <h3>หลักสูตรวิศวกรรมซอฟต์แวร์</h3>
+
+                    <div class="curriculum-list">
+                        <div class="list-item">
+                            <h4>1. ชื่อหลักสูตร</h4>
+                            <div class="list-detail">
+                                <span>ภาษาไทย</span>
+                                <span>: วิทยาศาสตรบัณฑิต สาขาวิชาวิศวกรรมซอฟต์แวร์</span>
+                            </div>
+                            <div class="list-detail">
+                                <span>ภาษาอังกฤษ</span>
+                                <span>: Bachelor of Science Program in Software Engineering</span>
+                            </div>
+                        </div>
+
+                        <div class="list-item">
+                            <h4>2. ชื่อปริญญา</h4>
+                            <div class="list-detail">
+                                <span>ชื่อเต็มภาษาไทย</span>
+                                <span>: วิทยาศาสตรบัณฑิต ( วิศวกรรมซอฟต์แวร์ )</span>
+                            </div>
+                            <div class="list-detail">
+                                <span>ชื่อเต็มภาษาอังกฤษ</span>
+                                <span>: Bachelor of Science ( Software Engineering )</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <p>Copyright @2024 Project of Subject 5671206, Software Engineering, LPRU</p>
+    </footer>
+
+    <!-- Update -->
+    <div class="update-popup" id="updatePopup">
+        <div class="popup-header">
+            <span><i class="fas fa-bullhorn"></i>Update bro !!</span>
+            <button class="close-btn" onclick="closePopup()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="popup-content">
+            <p class="update-pop-subtitle">** ทำระบบ Login แล้ว na</p>
+            <ul>
+                <li> + Add Login System </li>
+                <li> + Add Responsive For Desktop Tablet Mobile</li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="Home/JS/Banner.js"></script>
+    <script src="Home/JS/script.js"></script>
+</body>
+
+</html>

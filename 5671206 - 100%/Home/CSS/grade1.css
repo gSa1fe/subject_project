@@ -1,0 +1,287 @@
+/* --- Grade Announcement Styles --- */
+
+.grade-announcement-section {
+    padding: 30px; 
+    color: #333;
+    background-color: #fff;
+}
+
+/* Header */
+.announcement-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.announcement-header h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #201a4a;
+}
+
+.announcement-header h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.announcement-header .remark {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Toolbar (Term Title + Dropdown) */
+.grade-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #302b63;
+    padding-bottom: 15px;
+}
+
+.term-info h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #302b63;
+    margin: 0;
+}
+
+/* Year Dropdown Container */
+.year-filter-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    z-index: 10;
+}
+
+.year-filter-container label {
+    font-size: 18px;
+    font-weight: 600;
+    color: #302b63;
+}
+
+/* Custom Dropdown Styles */
+
+.year-dropdown {
+    position: relative;
+    width: 150px !important;
+}
+
+/* Selected Box */
+.year-dropdown .dropdown-selected {
+    background-color: #fff;
+    border: 2px solid #e0e0e0;
+    border-radius: 30px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    color: #302b63;
+}
+
+.year-dropdown .dropdown-selected i {
+    color: #9a5cff;
+    transition: transform 0.3s ease; 
+}
+
+.year-dropdown.active .dropdown-selected i {
+    transform: rotate(90deg);
+}
+
+/* Dropdown List */
+.year-options {
+    position: absolute;
+    top: 115%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    overflow: hidden;
+    max-height: 0; 
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 100;
+    -ms-overflow-style: none;
+}
+
+.year-options.open {
+    max-height: 300px; 
+    opacity: 1;
+    visibility: visible;
+    overflow-y: auto; 
+}
+
+
+.year-item {
+    padding: 12px 20px;
+    cursor: pointer;
+    color: #333;
+    font-size: 16px;
+}
+
+
+.year-item:hover, .year-item.active {
+    background-color: #6b498a; 
+    color: #fff;
+    padding-left: 35px;
+}
+
+/* Approval Date */
+.approval-date {
+    text-align: right;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+/* Table Design */
+.table-responsive {
+    overflow-x: auto;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    margin-top: 20px;
+}
+
+.grade-table {
+    width: 100%;
+    min-width: 800px;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: white;
+}
+
+.grade-table th {
+    background-color: #302b63;
+    color: white;
+    padding: 18px 15px;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.1);
+}
+
+.grade-table th:last-child {
+    border-right: none;
+}
+
+.grade-table td {
+    padding: 16px 15px;
+    border-bottom: 1px solid #f0f0f0;
+    text-align: center;
+    font-size: 16px;
+    color: #444;
+}
+
+.grade-table td.text-left {
+    text-align: left;
+    padding-left: 25px;
+    line-height: 1.5; 
+}
+
+.grade-table tbody tr:hover {
+    background-color: #f9f7fc;
+    transition: background-color 0.2s;
+}
+
+/* ลิงก์เกรด */
+.grade-link {
+    display: inline-block;
+    padding: 5px 15px;
+    background-color: #fff0f0;
+    color: #e74c3c;
+    border-radius: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.grade-link:hover {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* Responsive Styles */
+
+/* For Tablet */
+
+@media screen and (max-width: 1024px) {
+    .grade-announcement-section {
+        padding: 20px;
+    }
+
+    .grade-table th, .grade-table td {
+        padding: 12px 10px;
+        font-size: 15px;
+    }
+}
+
+/* For Mobile */
+@media screen and (max-width: 768px) {
+    .grade-announcement-section {
+        padding: 15px 10px;
+    }
+
+    .announcement-header h2 {
+        font-size: 20px;
+    }
+
+    .announcement-header h3 {
+        font-size: 16px;
+    }
+
+    .announcement-header .remark {
+        font-size: 12px;
+    }
+
+    .grade-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .term-info h3 {
+        font-size: 18px;
+    }
+
+    .year-filter-container {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .year-filter-container label {
+        font-size: 16px;
+    }
+
+    .grade-table th {
+        font-size: 14px;
+        padding: 10px 5px;
+        white-space: nowrap;
+    }
+
+    .grade-table td {
+        font-size: 14px;
+        padding: 10px 5px;
+    }
+
+    .grade-table td.text-left {
+        min-width: 150px;
+        padding-left: 10px;
+    }
+
+    .grade-link {
+        font-size: 12px;
+        padding: 4px 10px;
+    }
+}
+
+
