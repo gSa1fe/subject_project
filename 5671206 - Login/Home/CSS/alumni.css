@@ -1,0 +1,298 @@
+/* --- Directory Page Styles --- */
+
+.directory-section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* หัวข้อ */
+.directory-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #201a4a;
+}
+
+.directory-title h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.directory-title h3 {
+    font-size: 22px;
+    font-weight: 500;
+    color: #555;
+}
+
+/* Custom Dropdown Styles */
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    position: relative; 
+    z-index: 10; 
+}
+
+.filter-container label {
+    font-size: 18px;
+    font-weight: 600;
+    color: #302b63;
+}
+
+.custom-dropdown {
+    position: relative;
+    width: 280px;
+    font-family: 'Kanit', sans-serif;
+}
+
+/* Selected Box */
+.dropdown-selected {
+    background-color: #fff;
+    border: 2px solid #e0e0e0;
+    border-radius: 30px; 
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    color: #302b63;
+}
+
+.dropdown-selected i {
+    color: #9a5cff;
+    transition: transform 0.3s;
+}
+
+.custom-dropdown.active .dropdown-selected i {
+    transform: rotate(90deg);
+}
+
+/* Dropdown List */
+.dropdown-options {
+    position: absolute;
+    top: 110%; 
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    overflow: hidden;
+    max-height: 0; 
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 100;
+    border: 1px solid #f0f0f0;
+}
+
+
+.dropdown-options.open {
+    max-height: 300px; 
+    opacity: 1;
+    visibility: visible;
+    overflow-y: auto; 
+}
+
+.dropdown-item {
+    padding: 12px 20px;
+    cursor: pointer;
+    color: #333;
+    font-size: 16px;
+}
+
+.dropdown-item:hover, .dropdown-item.active {
+    background-color: #6b498a; 
+    color: #fff;
+    padding-left: 35px;
+}
+
+.dropdown-options {
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 100;
+    border: 1px solid #f0f0f0;
+    -ms-overflow-style: none;
+}
+
+
+
+/* การ์ดกรอบใหญ่ */
+.directory-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* ป้าย Tag หัวการ์ด */
+.card-header-badge {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.badge-group, .badge-batch {
+    background-color: #303030;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Grid แสดงรายชื่อนักศึกษา */
+.student-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.student-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* กรอบรูปวงกลม */
+.img-frame {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border: 3px solid #f0f0f0;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.img-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ตัวหนังสือชื่อและรหัส */
+.st-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.st-id {
+    font-size: 14px;
+    color: #888;
+    font-weight: 300;
+}
+
+/* Responsive Styles */
+
+/* For Tablet */
+
+@media screen and (max-width: 1024px) {
+    .directory-section {
+        padding: 30px 20px;
+    }
+    
+    .student-grid {
+        gap: 20px;
+    }
+}
+
+/* For Mobile */
+
+@media screen and (max-width: 768px) {
+    .directory-title h2 {
+        font-size: 22px;
+    }
+
+    .directory-title h3 {
+        font-size: 16px;
+    }
+
+    .filter-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 25px;
+    }
+
+    .filter-container label {
+        font-size: 16px;
+    }
+
+    .custom-dropdown {
+        width: 100%;
+    }
+    
+    .dropdown-selected {
+        padding: 10px 15px;
+    }
+
+    .directory-card {
+        padding: 20px 15px;
+    }
+
+    .card-header-badge {
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 25px;
+        align-items: stretch;
+    }
+    
+    .badge-group, .badge-batch {
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .student-grid {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); 
+        gap: 15px;
+    }
+
+    .student-item {
+        margin-bottom: 10px;
+    }
+
+    .img-frame {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 10px;
+        border-width: 2px;
+    }
+    
+    .st-name {
+        font-size: 14px;
+        line-height: 1.3;
+    }
+    
+    .st-id {
+        font-size: 12px;
+    }
+}
+
+
+
