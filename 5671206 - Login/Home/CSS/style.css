@@ -1,0 +1,470 @@
+/* Global Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Navbar Styles */
+
+.site-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-content {
+    background: linear-gradient(90deg, #201a4a 0%, #3a1655 100%);
+    height: 120px;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.header-text h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.header-text p {
+    font-size: 16px;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.header-logo {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.header-logo span {
+    color: #cfaaff;
+}
+
+.navbar {
+    background-color: #302b63;
+    height: 60px;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 60px;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s;
+}
+
+.nav-menu li a:hover {
+    color: #d49eff;
+}
+
+.login-btn{
+    background: 
+    linear-gradient(180deg, #b97af0 0%, #7237d1 100%);
+    border: none;
+    border-radius: 30px;
+    padding: 8px 25px;
+}
+
+.login-btn a {
+	font-size: 16px;
+    font-weight: 700;
+    font-family: 'Kanit', sans-serif;
+	color: white;
+	text-decoration: none;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+	cursor: pointer;
+}
+
+/* Dropdown Menu Styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 120%;
+    left: 0;
+    min-width: 200px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 10px 0;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-content .drop {
+    color: rgb(0, 0, 0);
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    font-size: 15px;
+    border-radius: 1px;
+}
+
+.dropdown-content .drop:hover {
+    background-color: #6b498a;
+    color: #f0f0f0;
+    padding-left: 35px;
+}
+
+.dropdown .fa-angle-right {
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover .fa-angle-right {
+    transform: rotate(90deg);
+}
+
+/* --- Footer Styles --- */
+.site-footer {
+    width: 100%;
+    background: linear-gradient(90deg, #201a4a 0%, #3a1655 100%);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: auto; 
+}
+
+.site-footer p {
+    opacity: 0.9;
+    letter-spacing: 0.5px;
+}
+
+/* Custom Scrollbar */
+
+/* สำหรับ Chrome, Edge, Safari */
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4a4a4a;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* สำหรับ Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #b8b8b8 #353535;
+}
+
+/* Lenis Scroll Setup */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+}
+
+/* Update Popup Notification */
+.update-popup {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 320px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    font-family: 'Kanit', sans-serif;
+    overflow: hidden;
+    transform: translateX(150%); 
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Class สำหรับแสดงผล */
+.update-popup.show {
+    transform: translateX(0);
+}
+
+.popup-header {
+    background: linear-gradient(90deg, #302b63 0%, #3a1655 100%);
+    color: white;
+    padding: 12px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.popup-header i {
+    color: #cfaaff;
+    margin-right: 5px;
+}
+
+.close-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.close-btn:hover {
+    opacity: 1;
+}
+
+.popup-content {
+    padding: 15px;
+    color: #333;
+}
+
+.popup-content p {
+    font-size: 14px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #302b63;
+}
+
+.popup-content ul {
+    list-style: none;
+    padding-left: 5px;
+}
+
+.popup-content ul li {
+    font-size: 13px;
+    margin-bottom: 5px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.popup-content .update-pop-subtitle {
+    color: rgb(184, 77, 99);
+}
+
+/* Responsive Styles */
+
+/* For Tablet */
+@media screen and (max-width: 1024px) {
+    .header-content {
+        height: auto;
+        padding: 20px;
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .header-text h1 {
+        font-size: 24px;
+    }
+
+    .navbar {
+        padding: 0 20px;
+        position: relative;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        background-color: #302b63;
+        gap: 0;
+        transition: 0.3s ease;
+        padding: 20px 0;
+        z-index: 999;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .nav-menu li a {
+        justify-content: center;
+        font-size: 18px;
+    }
+
+    .dropdown-content {
+        position: static;
+        background-color: #3a1655;
+        width: 100%;
+        visibility: visible;
+        opacity: 1;
+        transform: none;
+        display: none;
+        padding: 0;
+    }
+
+    .dropdown-content.show {
+        margin-top: 5px;
+        display: block;
+    }
+    
+    .dropdown-content .drop {
+        padding-left: 0;
+        text-align: center;
+        color: white;
+    }
+}
+
+/* For Mobile */
+@media screen and (max-width: 768px) {
+    .header-content {
+        height: auto;
+        padding: 20px;
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .header-text h1 {
+        font-size: 24px;
+    }
+
+    .navbar {
+        padding: 0 20px;
+        position: relative;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        background-color: #302b63;
+        gap: 0;
+        transition: 0.3s ease;
+        padding: 20px 0;
+        z-index: 999;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .nav-menu li a {
+        justify-content: center;
+        font-size: 18px;
+    }
+
+    .dropdown-content {
+        position: static;
+        background-color: #3a1655;
+        width: 100%;
+        visibility: visible;
+        opacity: 1;
+        transform: none;
+        display: none;
+        padding: 0;
+    }
+
+    .dropdown-content.show {
+        margin-top: 5px;
+        display: block;
+    }
+    
+    .dropdown-content .drop {
+        padding-left: 0;
+        text-align: center;
+        color: white;
+    }
+
+    .update-popup {
+        width: 90%;
+        right: 5%;
+        bottom: 20px;
+    }
+}
+
+
+
+
